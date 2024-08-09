@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/027eebf8db.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <title>Rent a car</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans";
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h3 {
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: bolder;
+        }
+
+        header {
+            height: 600px;
+            width: 100%;
+            /* background-image: url("car1.jpg"); */
+            background-image: url("car17.jpg");
+
+            background-position: center;
+            background-size: cover;
+            display: grid;
+            grid-template-rows: 10% auto 20%;
+            color: black;
+        }
+
+        /* ------------------------ */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .header_nav_links a {
+            padding: 10px;
+            color: black;
+        }
+
+        .header_nav_links a:hover{
+            font-weight: bold;
+        }
+
+        header nav h1 {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        header nav h1:hover{
+           color: #000000cc;
+           cursor: pointer;
+        }
+
+        header .header_main {
+            display: grid;
+        }
+
+        /* --------------------------------------- */
+        .left_side_contant {
+            height: 90%;
+            width: 40%;
+            margin: 0px 140px;
+            color: #e5e5e5;
+
+        }
+
+        .left_side_contant h1 span {
+            color: white;
+        }
+
+        .left_side_contant h1,
+        h4,
+        p,
+        a {
+            padding: 10px 0px;
+        }
+
+        .left_side_contant h1 {
+            font-size: 2.5rem;
+            font-weight: 4000;
+        }
+
+        .left_side_contant h4 {
+            word-spacing: 3px;
+        }
+
+        .left_side_contant p {
+            font-size: 15px;
+            color: white;
+        }
+
+        .btn_book_ride {
+            display: inline-block;
+            color: #e5e5e5;
+            border: 2px solid #e5e5e5;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .btn_book_ride:hover {
+            background-color: #e5e5e5cc;
+            border: none;
+            color: black;
+        }
+
+        /* -------------------- */
+        .header_footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .header_footer_btn:hover {
+            /* background-color: #e5e5e5cc;
+            color: black;
+            border-radius: 5px;
+            padding: 10px;; */
+            font-weight: bold;
+
+        }
+
+        .header_footer_inner {
+            background-color: #ffffffcc;
+            box-shadow: 20px 20px 50px grey;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-evenly;
+            font-weight: 5000;
+
+        }
+
+        .header_footer_inner a {
+            padding: 0px 20px;
+        }
+
+        /* --------------------- */
+        .section_middle {
+            padding: 20px 0px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .section_middle_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .section_middle_select_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0px 20px;
+        }
+
+        .icon_style {
+            background-color: #e5e5e5;
+            border: 5px solid silver;
+            padding: 30px;
+        }
+
+        /* --------------------------- */
+        .section_aboutus {
+            height: 400px;
+            width: 100%;
+            background-color: rgb(247, 247, 247);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .section_aboutus h3,
+        h5,
+        pre {
+            padding: 10px 0px;
+        }
+
+        /* --------------------------- */
+        .section_permotion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .section_permotion_box {
+            background-color: #ffffffcc;
+            margin: 30px;
+            height: 180px;
+            width: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 15px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 50px gray;
+        }
+
+        /* --------------------------------- */
+        .section_cars_deals {
+            height: 500px;
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .car_collection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .car_collection_box {
+            background-color: white;
+            height: 400px;
+            width: 300px;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 0px 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+
+        .car_collection_box_img {
+            width: 276px;
+            height: 180px;
+        }
+
+        .car_collection_box_img img {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            background-color: silver;
+        }
+
+        .car_collection_box span {
+            font-size: 15px;
+            color: rgb(96, 96, 110);
+        }
+
+        .btn_book_ride_unique {
+            width: 100%;
+            text-align: center;
+            color: rgb(96, 96, 110);
+            border-color: rgb(96, 96, 110);
+
+        }
+
+        /* .car_collection_box_img:hover{
+            transition: .2s;
+            height: 200px;
+        } */
+.transition{
+    transition:.2s;
+    height: 200px;
+}
+.transition_reverse{
+    transition:.2s;
+    height: 180px;
+}
+
+        /* -------------------------------- */
+        .section_subscribe {
+            height: 300px;
+            width: 100%;
+            background-color: #f7f7f7;
+            margin-top: 110px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .section_subscribe_contant h3,
+        div {
+            padding: 20px 0px;
+        }
+
+        .section_subscribe_img {
+            position: relative;
+            bottom: 50px;
+        }
+
+        .email_subscribe {
+            /* background-color: #ffffffcc; */
+            background-color: #f7f7f7cc;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 10px 10px 50px gray;
+            padding: 10px;
+        }
+
+        /* ----------------------------------- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 50px;
+            background-color: silver;
+            margin-top: 40px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer_link {
+            margin-bottom: 10px;
+        }
+
+        .media_icons i {
+            padding-right: 10px;
+            cursor: pointer;
+        }
+
+        /* ------------------------------------- */
+        .box{
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 4px solid black;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 20x;
+    color: #e5e5e5;
+    outline: none;
+    transition: .5s;
+}
+.box:hover input{
+    width: 300px;
+    background: #3b3640;
+    border-radius: 10px;
+}
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    /* color: #ffd52d; */
+    transition: .2s;
+}
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1><a href="carHome.html">RentWheels</a></h1>
+            <div class="header_nav_links">
+                <a href="carHome.html">Home</a>
+                <a href="car_about.html">About Us</a>
+                <a href="Service.html">Services</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="box">
+                <form name="search">
+                    <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                </form>
+                <i class="fas fa-search"></i>
+            </div>
+        </nav>
+        <div class="header_main">
+            <div class="left_side">
+                <div class="left_side_contant">
+                    <h4>Welcome to RentWheels</h4>
+                    <h1><span>Rent The Best Quality</span> <br>Car's With Us</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.
+                        <br> Labore vitae ea unde culpa voluptas
+                      </p>
+                    <a href="Service.html" class="btn_book_ride">Book Your Ride</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_footer">
+            <div class="header_footer_inner">
+                <a class="header_footer_btn" href="">Choose Your Location</a>
+                <a class="header_footer_btn" href="">Pick-up Date</a>
+                <a class="header_footer_btn" href="">Return Date</a>
+                <a class="header_footer_btn" href="">Book your ride</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ------------------------------------------------------ -->
+    <section class="section_middle">
+        <h5>How its work</h5>
+        <h2>Our Working Steps</h2>
+        <div class="section_middle_box">
+            <div class="section_middle_select_box">
+                <i class="icon_style fa-solid fa-location-dot fa-xl"></i>
+                <h4>Choose Location</h4>
+                <p>Lorem ipsum dolor sit amet <br>consectetur adipisicing
+                    <br> Voluptatum eligendi, mollitia odit dolor <br> veritatis harum?
+                </p>
+            </div>
+
+            <div class="section_middle_select_box">
+                <i class="icon_style fa-regular fa-calendar-days fa-xl"></i>
+                <h4>Choose Location</h4>
+                <p>Lorem ipsum dolor sit amet <br>consectetur adipisicing
+                    <br> Voluptatum eligendi, mollitia odit dolor <br> veritatis harum?
+                </p>
+            </div>
+
+            <div class="section_middle_select_box">
+                <i class="icon_style fa-solid fa-car fa-xl"></i>
+                <h4>Choose Location</h4>
+                <p>Lorem ipsum dolor sit amet <br>consectetur adipisicing
+                    <br> Voluptatum eligendi, mollitia odit dolor <br> veritatis harum?
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- --------------------------------------------------- -->
+    <section class="section_aboutus">
+        <div>
+            <img src="cars4.png" alt="" height="300">
+        </div>
+        <div>
+            <h5>About Us</h5>
+            <h3>Feel The Best Experience <br> With Our Rental Deals</h3>
+            <pre>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.  
+        Corrupti placeat cum, voluptate iusto sit, quia inventore, 
+        in similique aliquam praesentium labore nostrum? 
+        Molestiae vel exercitationem porro repellendus ea, dolore
+        aliquam quam odit. Ducimus dolorum animi explicabo odio, at
+        sapiente similique!Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Corporis expedita iste dignissimos? Quia
+        doloribus vero architecto, ducimus sed magnam aliquam.
+    </pre>
+            <h5>Hassan Sheikh</h5>
+        </div>
+    </section>
+    <!-- --------------------------------------- -->
+
+    <!-- ----------------------------- -->
+
+    <section class="section_cars_deals">
+        <h2>Explore Our Top Deals</h2>
+        <div class="car_collection">
+            <div class="car_collection_box">
+                <div class="car_collection_box_img">
+                    <img src="car7.png" alt="">
+                </div>
+                <h4>Honda City 5 Seater Car</h4>
+                <span>Rs.2500 <sub>/Day</sub></span>
+                <span>Rs.30000 <sub>/Month</sub></span>
+                <a class="btn_book_ride btn_book_ride_unique" href="Service.html">Rent Now</a>
+            </div>
+
+            <div class="car_collection_box">
+                <div class="car_collection_box_img">
+                    <img src="car18.png" alt="">
+                </div>
+                <h4>Honda City 5 Seater Car</h4>
+                <span>Rs.2500 <sub>/Day</sub></span>
+                <span>Rs.30000 <sub>/Month</sub></span>
+                <a class="btn_book_ride btn_book_ride_unique" href="Service.html">Rent Now</a>
+            </div>
+
+            <div class="car_collection_box">
+                <div class="car_collection_box_img">
+                    <img src="car13.png" alt="">
+                </div>
+                <h4>Honda City 5 Seater Car</h4>
+                <span>Rs.2500 <sub>/Day</sub></span>
+                <span>Rs.30000 <sub>/Month</sub></span>
+                <a class="btn_book_ride btn_book_ride_unique" href="Service.html">Rent Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- -->
+
+    <section class="section_subscribe">
+        <div class="section_subscribe_contant">
+            <h3>Subscribe To Our Newsletter <br>
+                For New Updates</h3>
+            <div class="email_subscribe">
+                <span>Your Email Address..</span>
+                <a href="" class="btn_book_ride btn_book_ride_unique subscribe_btn">Subscribe Now</a>
+            </div>
+        </div>
+        <img class="section_subscribe_img" src="cars4.png" alt="">
+    </section>
+    <!-- ---------------------------------------- -->
+    <section class="section_permotion">
+        <div class="section_permotion_box">
+            <i class="fa-solid fa-face-smile fa-2xl"></i><br>
+            <h3>4780+</h3>
+            <p>Happy Clients</p>
+        </div>
+
+        <div class="section_permotion_box">
+            <i class="fa-solid fa-car fa-2xl"></i><br>
+            <h3>7894+</h3>
+            <p>Car Rented</p>
+        </div>
+
+        <div class="section_permotion_box">
+            <i class="fa-solid fa-users-line fa-2xl"></i> <br>
+            <h3>9874+</h3>
+            <p>World Wide Clients</p>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------- -->
+    <footer>
+        <div class="introduction">
+            <h3>RentWheels</h3>
+            <pre>
+Lorem ipsum, dolor sit amet consectetur 
+adipisicing elit. Iure illum maxime provident
+atque repellendus, odio sapiente aut 
+ipsum ipsam alias, officiis sint 
+deleniti? Distinctio, corrupti 
+et quam architecto vero nam.
+            </pre>
+        </div>
+
+        <div class="links">
+            <h3>Our Links</h3>
+            <a href="" class="footer_links">Home</a>
+            <a href="" class="footer_links">About</a>
+            <a href="" class="footer_links">Services</a>
+            <a href="" class="footer_links">Contact Us</a>
+        </div>
+        <div class="location">
+            <h3>Our Location</h3>
+            <p>Alam Khan Road Committee Chowk Rawalpindi</p>
+            <h3>Our Email</h3>
+            <p>HassanSheikh993@gmail.com</p>
+            <div class="media_icons">
+                <i class="fa-brands fa-instagram fa-xl"></i>
+                <i class="fa-brands fa-twitter fa-xl"></i>
+                <i class="fa-brands fa-x-twitter fa-xl"></i>
+                <i class="fa-brands fa-facebook-f fa-xl"></i>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>
+    let carCollectionBoxImgs = document.querySelectorAll(".car_collection_box_img");
+
+    carCollectionBoxImgs.forEach(img => {
+        img.addEventListener("mouseover", () => {
+            img.classList.remove("transition_reverse");
+            img.classList.add("transition");
+        });
+
+        img.addEventListener("mouseleave", () => {
+            img.classList.remove("transition");
+            img.classList.add("transition_reverse");
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/027eebf8db.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>Service</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans";
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 25% auto;
+        }
+
+        /* ---------------------------- */
+        nav {
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+        }
+
+
+        .header_nav_links a {
+            padding: 10px;
+            color: black;
+        }
+
+        .header_nav_links a:hover{
+            font-weight: bold;
+        }
+
+       a{
+        text-decoration: none;
+        color: black;
+       }
+
+       /* ---------------------------------- */
+       .box{
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 4px solid black;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 20x;
+    color: #e5e5e5;
+    outline: none;
+    transition: .5s;
+}
+.box:hover input{
+    width: 300px;
+    background: #3b3640;
+    border-radius: 10px;
+}
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    /* color: #ffd52d; */
+    transition: .2s;
+}
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
+
+       
+        /* ---------------------------- */
+        .car_to_rent {
+            height: auto;
+            width: 100%;
+            background-color: #f7f7f7;
+            margin-top: 90px;
+        }
+
+        .car_to_rent .help_bar {
+            height: 200px;
+            display: grid;
+            grid-template-rows: 30% auto;
+            margin: 10px 10px;
+        }
+
+        .upper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            box-shadow: 10px 10px 20px silver;
+        }
+
+        .help_details {
+            background-color: white;
+            padding: 0px 10px;
+            width: 100%;
+            height: 0px;
+            overflow: hidden;
+            transition: height 0.3s ease;
+        }
+
+        .help_details img {
+            float: left;
+            position: relative;
+            bottom: 6px;
+        }
+
+        .help_details_shown {
+            height: 100%;
+        }
+
+        .help_bar_btn {
+            padding: 10px;
+            text-align: center;
+            color: rgb(96, 96, 110);
+            border: 2px solid #e5e5e5;
+        }
+
+        .help_bar_btn:hover {
+            background-color: #e5e5e5cc;
+            border: none;
+            color: black;
+        }
+
+        /* --------------------------------------------------------- */
+        .main_car_collection {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0px 10px;
+            position: relative;
+            bottom: 120px;
+            transition: transform 0.3s ease;
+
+        }
+
+        .main_car_collection.shifted {
+            transform: translateY(120px);
+        }
+
+        /* ------------------------------------------------------- */
+        .details_part {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            margin-bottom: 20px;
+            margin: 5px 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 20px;
+        }
+
+        .details_part:hover {
+            cursor: pointer;
+        }
+
+        .details_part_img {
+            background-color: white;
+            border-radius: 20px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .details_part_specification {
+            background-color: white;
+        }
+
+        .details_part_img img {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+        }
+        .details_part_img:hover{
+            opacity: 0.9;
+        }
+        .details_part_specification {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px 20px;
+        }
+
+        .icon i:not(:first-child) {
+            padding-left: 20px;
+            /* Apply padding-left to all except the first child */
+        }
+
+        .icon i,
+        span {
+            margin-left: 10px;
+            font-size: 12px;
+        }
+
+        .details_part_price_span{
+            font-size: 20px;
+        }
+
+        .details_part_price {
+            align-self: flex-end;
+        }
+
+        /* --------------------------------------- */
+        .side_filter {
+            background-color: white;
+            height: auto;
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        .filter {
+            background-color: white;
+            margin: 10px;
+            height: 80px;
+            box-shadow: 0px 10px 50px silver;
+            z-index: 1;
+        }
+
+        .filter_heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px;
+            padding-top: 7px;
+
+
+        }
+
+        .filter_icon {
+            display: flex;
+            position: relative;
+            top: 30px;
+            justify-content: space-between;
+            padding: 0px 40px;
+            font-size: 18px;
+        }
+
+        /* --------------------- */
+        .side_filter_options select,
+        .filter_btn,
+        .filter_btn_search {
+            padding: 10px 15px;
+            width: 100px;
+            text-align: center;
+        }
+        .side_filter_options {
+            margin-left: 10px;
+        }
+
+        .side_filter_options {
+            margin: 10px;
+            margin-top: 30px;
+        }
+
+        .filter_btn_search {
+            width: 200px;
+        }
+        /* ---------------------------------------------------------- */
+        .extra{
+            display: flex;
+            margin: 20px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        .extra_box{
+            background-color: white;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 50px silver;
+        }
+       
+        .transition{
+            height: 150px;
+            padding: 50px;
+            transition: .5s;
+        }
+
+        .transition_reverse{
+            transition: .5s;
+        }
+        
+        .extra p{
+            font-size: 15px;
+        }
+
+        /* ---------------------------------------- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 50px;
+            background-color: silver;
+            margin-top: 40px;
+            padding-top: 15px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer_link {
+            margin-bottom: 10px;
+        }
+
+        .media_icons i {
+            padding-right: 10px;
+            cursor: pointer;
+        }
+
+        footer h3,p,a{
+            margin-top: 10px;
+        }
+        .footer_icon{
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1><a href="carHome.html">RentWheels</a></h1>
+        <div class="header_nav_links">
+            <a href="carHome.html">Home</a>
+            <a href="car_about.html">About Us</a>
+            <a href="Service.html">Services</a>
+            <a href="">Contact Us</a>
+        </div>
+        <div class="box">
+            <form name="search">
+                <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+            </form>
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+    <!-- --------------------------------------- -->
+    <section>
+        <div class="side_filter">
+            <div class="filter">
+                <div class="filter_heading">
+                    <h3>Filter</h3>
+                    <i class="fa-solid fa-trash fa-lg"></i>
+                </div>
+
+                <div class="filter_icon">
+                    <i class="fa-brands fa-searchengin fa-beat fa-lg"></i>
+                    <!-- <i class="fa-regular fa-bookmark fa-lg"></i> -->
+                    <!-- <i class="fa-regular fa-clock fa-lg"></i> -->
+                    <i class="fa-regular fa-bookmark fa-beat fa-lg"></i>
+                    <i class="fa-regular fa-clock fa-beat fa-lg"></i>
+                   
+                </div>
+            </div>
+            <!-- --------------- -->
+            <div class="side_filter_options">
+                <h4>PRICE</h4>
+                <select id="Price" name="">
+                    <option value="" disabled selected hidden>From</option>
+                    <option value="">5000</option>
+                    <option value="">10000</option>
+                    <option value="">15000</option>
+                    <option value="">25000</option>
+                    <option value="">50000</option>
+                </select>
+                <select id="Price" name="">
+                    <option value="" disabled selected hidden>To</option>
+                    <option value="">5000</option>
+                    <option value="">10000</option>
+                    <option value="">15000</option>
+                    <option value="">25000</option>
+                    <option value="">50000</option>
+                </select>
+            </div>
+
+            <!-- --------------- -->
+            <div class="side_filter_options">
+                <h4>Registration</h4>
+                <select id="Registration" name="">
+                    <option value="" disabled selected hidden>From</option>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                    <option value="">2023</option>
+                    <option value="">2024</option>
+                </select>
+                <select id="Registration" name="">
+                    <option value="" disabled selected hidden>To</option>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                    <option value="">2023</option>
+                    <option value="">2024</option>
+                </select>
+            </div>
+
+            <!-- --------------- -->
+            <div class="side_filter_options">
+                <h4>Mileage</h4>
+                <select id="Mileage" name="">
+                    <option value="" disabled selected hidden>From</option>
+                    <option value="">5000</option>
+                    <option value="">10000</option>
+                    <option value="">15000</option>
+                    <option value="">25000</option>
+                    <option value="">50000</option>
+                </select>
+                <select id="Mileage" name="">
+                    <option value="" disabled selected hidden>To</option>
+                    <option value="">5000</option>
+                    <option value="">10000</option>
+                    <option value="">15000</option>
+                    <option value="">25000</option>
+                    <option value="">50000</option>
+                </select>
+            </div>
+            <!-- ---------- -->
+            <div class="side_filter_options">
+                <h4>Transmission</h4>
+
+                <button class="filter_btn">Manual</button>
+                <button class="filter_btn">Automatic</button>
+            </div>
+            <!-- ---------------------------------- -->
+            <div class="side_filter_options">
+                <h4>Fuel</h4>
+
+                <button class="filter_btn">Diesel</button>
+                <button class="filter_btn">Petrol</button>
+            </div>
+            <!-- ---------------------------------- -->
+
+            <div class="side_filter_options">
+                <h4>Mileage</h4>
+                <select id="Power" name="">
+                    <option value="" disabled selected hidden>From</option>
+                    <option value="">25</option>
+                    <option value="">37</option>
+                    <option value="">44</option>
+                    <option value="">55</option>
+                    <option value="">110</option>
+                </select>
+                <select id="Power" name="">
+                    <option value="" disabled selected hidden>From</option>
+                    <option value="">25</option>
+                    <option value="">37</option>
+                    <option value="">44</option>
+                    <option value="">55</option>
+                    <option value="">110</option>
+                </select>
+            </div>
+            <!-- -------------------------------- -->
+
+            <div class="side_filter_options"><button class="filter_btn_search">Detailed Searched</button></div>
+            <!-- -------------------- -->
+        </div>
+        
+        <!-- ---------------------------------------------------------------------- -->
+        <div class="car_to_rent">
+            <div class="help_bar">
+                <div class="upper">
+                    <h3>How to buy a car online</h3>
+                    <button class="help_bar_btn">Click for help</button>
+                </div>
+                <div class="help_details">
+                    <img src="3d-person.png" alt="" height="150px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, enim vel? Nulla dicta enim,
+                    debitis Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, voluptate! Lorem ipsum dolor
+                    sit amet consectetur, adipisicing elit. Mollitia hic minus ipsum enim! Maiores possimus dolorem
+                    cupiditate, ab sapiente ipsam.
+                </div>
+            </div>
+
+            <!-- ------------------------------------------- -->
+
+            <div class="main_car_collection">
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c1.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c3.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c2.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c4.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c7.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="details_part">
+                    <div class="details_part_img"><img src="c6.jpg" alt=""></div>
+                    <div class="details_part_specification">
+                        <h2>Honda City 5 Seater Car</h2>
+                        <div class="icon">
+                            <i class="fa-solid fa-road "><span>26 758 Km</span></i>
+                            <i class="fa-solid fa-calendar-days "><span>4/2024</span></i>
+                            <i class="fa-solid fa-gas-pump "><span>Petrol</span></i>
+                        </div>
+
+                        <div class="details_part_price">
+                            <h3>
+                                <span class="details_part_price_span">Rs.2500 <sub>/Day</sub></span>
+                                <span class="details_part_price_span">Rs.30000 <sub>/Month</sub></span>
+                            </h3>
+                        </div>
+
+                    </div> 
+
+                </div>
+                <!-- -------------------------------------------------- -->
+            </div>
+        </div>
+    </section>
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+<div class="extra">
+    <div class="box1 extra_box">
+        <h3>Money back guarantee</h3>
+        <p>If you don't fall in love with the vehicle, simply return it to us.</p>
+    </div>
+
+    <div class="box2 extra_box">
+        <h3>Safe purchase</h3>
+        <p>We guarantee the technical condition of every vehicle sold.</p>
+    </div>
+
+    <div class="box3 extra_box">
+        <h3>6-month warranty</h3>
+        <p>In addition, with every car you receive an extended warranty.</p>
+    </div>
+</div>
+
+<!-- ------------------------------------------------------------------------------------ -->
+<footer>
+    <div class="introduction">
+        <h3>RentWheels</h3>
+        <pre>
+Lorem ipsum, dolor sit amet consectetur 
+adipisicing elit. Iure illum maxime provident
+atque repellendus, odio sapiente aut 
+ipsum ipsam alias, officiis sint 
+deleniti? Distinctio, corrupti 
+et quam architecto vero nam.
+        </pre>
+    </div>
+
+    <div class="links">
+        <h3>Our Links</h3>
+        <a href="" class="footer_links">Home</a>
+        <a href="" class="footer_links">About</a>
+        <a href="" class="footer_links">Services</a>
+        <a href="" class="footer_links">Contact Us</a>
+    </div>
+    <div class="location">
+        <h3>Our Location</h3>
+        <p>Alam Khan Road Committee Chowk Rawalpindi</p>
+        <h3>Our Email</h3>
+        <p>HassanSheikh993@gmail.com</p>
+        <div class="media_icons footer_icon">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+            <i class="fa-brands fa-twitter fa-xl"></i>
+            <i class="fa-brands fa-x-twitter fa-xl"></i>
+            <i class="fa-brands fa-facebook-f fa-xl"></i>
+
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        let helpBarBtn = document.querySelector(".help_bar_btn");
+        let helpDetails = document.querySelector(".help_details");
+        let mainCarCollection = document.querySelector(".main_car_collection");
+
+        helpBarBtn.addEventListener("click", () => {
+            helpDetails.classList.toggle("help_details_shown");
+            mainCarCollection.classList.toggle("shifted");
+        });
+
+        let extraBox = document.querySelectorAll(".extra_box");
+
+        extraBox.forEach(box => {
+        box.addEventListener("mouseover", () => {
+            box.classList.remove("transition_reverse");
+            box.classList.add("transition");
+        });
+
+        box.addEventListener("mouseleave", () => {
+            box.classList.remove("transition");
+            box.classList.add("transition_reverse");
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

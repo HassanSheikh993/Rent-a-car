@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/027eebf8db.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+    <title>About</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans";
+        }
+        h1{
+            margin-bottom: 20px;
+        }
+        pre{
+            font-size: 15px;
+        }
+        /* --------------------------------- */
+        nav {
+           
+            width: 100%;
+            height: 70px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+        }
+
+
+        .header_nav_links a {
+            padding: 10px;
+            color: black;
+        }
+
+        .header_nav_links a:hover{
+            font-weight: bold;
+        }
+
+       a{
+        text-decoration: none;
+        color: black;
+       }
+        /* ------------------------------------ */
+         /* ---------------------------------- */
+       .box{
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 4px solid black;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 20x;
+    color: #e5e5e5;
+    outline: none;
+    transition: .5s;
+}
+.box:hover input{
+    width: 300px;
+    background: #3b3640;
+    border-radius: 10px;
+}
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    /* color: #ffd52d; */
+    transition: .2s;
+}
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
+/* ------------------------------------------ */
+        .about_us{
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          
+        }
+
+        /* ------------------------------------- */
+        .mission,.vision,.extra{
+            width: 100%;
+            height: 250px;
+            background-color: #e5e5e5;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            margin: 20px 0px;
+        }
+        .mission_img{
+            height: auto;
+            margin-bottom: 100px;
+               }
+        .mission_img img,.vision_img img{
+         height: 350px;
+         width: 100%;
+        }
+
+        .vision{
+         background-color: white;
+        }
+        .vision_img{
+            margin-bottom: 25px;
+        }
+        .extra{
+            background-image: url("c6.jpg");
+            background-position: center;
+            background-size: cover;
+            opacity: 0.6;
+            margin: 0;
+        }
+        .extra:hover{
+            opacity: 0.7;
+        }
+
+/* ---------------------------- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 50px;
+            background-color: silver;
+            margin-top: 40px;
+            padding-top: 15px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer_link {
+            margin-bottom: 10px;
+        }
+
+        .media_icons i {
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        .media_icons,h3,p,a{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1><a href="carHome.html">RentWheels</a></h1>
+        <div class="header_nav_links">
+            <a href="carHome.html">Home</a>
+            <a href="car_about.html">About Us</a>
+            <a href="Service.html">Services</a>
+            <a href="">Contact Us</a>
+        </div>
+        <div class="box">
+            <form name="search">
+                <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+            </form>
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+    <!-- --------------------------------------- -->
+     <div class="extra"></div>
+     <!-- ------------------------------------- -->
+      <div class="about_us">
+        <h1>About Us</h1>
+        <pre>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ullam sequi aut deserunt tempore in assumenda dolorem
+exercitationem magni amet, eius eveniet mollitia repudiandae eum cum veritatis molestiae enim ipsa unde culpa 
+distinctio totam. Facere optio praesentium sunt tempore molestias sint impedit harum in quaerat commodi atque nihil 
+necessitatibus debitis deleniti quia reiciendis doloribus, soluta laboriosam hic minima? Saepe, doloremque molestias 
+autem unde soluta placeat minus nobis dignissimos aperiam voluptatum veniam voluptas excepturi neque id enim architecto 
+tenetur labore ut, impedit eos temporibus. Voluptatibus tempore fugiat aut, reiciendis cupiditate nesciunt!
+        </pre>
+      </div>
+
+      <div class="mission">
+   <div>
+    <h1>MISSION</h1>
+    <pre>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ullam sequi aut 
+exercitationem magni amet, eius eveniet mollitia repudiandae eum cum veritatis
+distinctio totam. Facere optio praesentium sunt tempore molestias sint impedit
+necessitatibus debitis deleniti quia reiciendis doloribus, soluta laboriosam 
+autem unde soluta placeat minus nobis dignissimos aperiam voluptatum veniam 
+tenetur labore ut, impedit eos temporibus. Voluptatibus tempore fugiat aut.
+    </pre>
+   </div>
+ <div class="mission_img"><img src="mission.png" alt=""></div>
+      </div>
+
+       <div class="vision">
+        <div class="vision_img"><img src="vision.PNG" alt=""></div>
+   <div>
+    <h1>VISION</h1>
+    <pre>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ullam sequi aut 
+exercitationem magni amet, eius eveniet mollitia repudiandae eum cum veritatis
+distinctio totam. Facere optio praesentium sunt tempore molestias sint impedit
+necessitatibus debitis deleniti quia reiciendis doloribus, soluta laboriosam 
+autem unde soluta placeat minus nobis dignissimos aperiam voluptatum veniam 
+tenetur labore ut, impedit eos temporibus. Voluptatibus tempore fugiat aut.
+    </pre>
+   </div>
+      </div>
+
+
+      <footer>
+        <div class="introduction">
+            <h3>RentWheels</h3>
+            <pre>
+    Lorem ipsum, dolor sit amet consectetur 
+    adipisicing elit. Iure illum maxime provident
+    atque repellendus, odio sapiente aut 
+    ipsum ipsam alias, officiis sint 
+    deleniti? Distinctio, corrupti 
+    et quam architecto vero nam.
+            </pre>
+        </div>
+    
+        <div class="links">
+            <h3>Our Links</h3>
+            <a href="" class="footer_links">Home</a>
+            <a href="" class="footer_links">About</a>
+            <a href="" class="footer_links">Services</a>
+            <a href="" class="footer_links">Contact Us</a>
+        </div>
+        <div class="location">
+            <h3>Our Location</h3>
+            <p>Alam Khan Road Committee Chowk Rawalpindi</p>
+            <h3>Our Email</h3>
+            <p>HassanSheikh993@gmail.com</p>
+            <div class="media_icons">
+                <i class="fa-brands fa-instagram fa-xl"></i>
+                <i class="fa-brands fa-twitter fa-xl"></i>
+                <i class="fa-brands fa-x-twitter fa-xl"></i>
+                <i class="fa-brands fa-facebook-f fa-xl"></i>
+    
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
